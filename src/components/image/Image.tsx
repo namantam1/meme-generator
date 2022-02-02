@@ -4,7 +4,7 @@ import styled from "styled-components";
 export type ImageProps = {
   src: string;
   caption?: string;
-  size?: number;
+  size?: number | string;
   onClick?: () => void;
 };
 
@@ -32,9 +32,12 @@ export default function Image(image: ImageProps) {
 
 const Container = styled.div`
   border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ImageContainer = styled.div`
+  flex: 1;
   cursor: pointer;
   transform: scale(0.9);
   transition: all 0.4s ease;

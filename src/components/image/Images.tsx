@@ -10,23 +10,27 @@ type Props = {
 
 export default function Images({ images, onImageSelect }: Props) {
   return (
-    <>
+    <Wrapper>
       <ImagesContainer>
         {images.map(image => (
           <Image
-            size={120}
+            size={100}
             onClick={() => onImageSelect?.(image)}
             key={image.id}
             {...image}
           />
         ))}
       </ImagesContainer>
-    </>
+    </Wrapper>
   );
 }
 
+const Wrapper = styled.div`
+  /* height: 100%; */
+  overflow: auto;
+`;
+
 const ImagesContainer = styled.div`
   display: flex;
-  overflow-x: auto;
-  height: 230px;
+  height: 100%;
 `;

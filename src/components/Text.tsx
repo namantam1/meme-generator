@@ -70,6 +70,7 @@ export default function Text({
         fontWeight: fontWeight,
         stroke: stroke,
         cursor: "move",
+        fontFamily: "system-ui",
         textShadow: "2px 2px 6px #0000006e",
       }}
       x={position.x}

@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+
 import memeApi from "./api/meme";
 import Images from "./components/image/Images";
 import Loader from "./components/Loader";
 import Text from "./components/Text";
 import TextCotroller from "./components/TextCotroller";
 import { exportSvg, imageToBase64, shareImage, svgToCanvas } from "./utils";
+import githubLogo from "./assets/images/github.png";
 
 type ImageType = { id: number | string; caption?: string; src: string };
 
@@ -98,6 +100,14 @@ function App() {
             <Button disabled={disabled} onClick={handleShare} color="#777777">
               Share
             </Button>
+            <Github
+              href="https://github.com/namantam1/meme-generator"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={githubLogo} alt="github" />
+              Source Code
+            </Github>
           </SideBarContainer>
         </SideBar>
         <MainContainer>
@@ -108,7 +118,8 @@ function App() {
               ref={svgRef}
               style={{
                 maxWidth: "100%",
-                height: "450px",
+                minHeight: "450px",
+                height: "100%",
                 width: "500px",
                 backgroundImage: `url(${image})`,
                 backgroundColor: "#fff",
@@ -138,18 +149,18 @@ const BackContainer = styled.div`
 
 const Container = styled.div`
   margin: 0px auto;
-  /* background-color: antiquewhite; */
   position: relative;
   top: 19px;
   width: 1396px;
   height: calc(100% - 55px);
   overflow: hidden;
-  display: flex;
   box-shadow: 2px 2px 8px 1px #00000063;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
 `;
 
 const SideBar = styled.div`
-  /* width: 30%; */
+  height: 100%;
   border-right: 1px solid #c4c4c4;
 `;
 
@@ -164,16 +175,16 @@ const Title = styled.div`
 `;
 
 const SideBarContainer = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
 `;
 
 const MainContainer = styled.div`
-  /* flex: 70%; */
-  width: 70%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 3fr 1fr;
 `;
 
 const EditorContainer = styled.div`
@@ -210,5 +221,22 @@ const Button = styled.button`
   &:disabled {
     opacity: 0.7;
     cursor: no-drop;
+  }
+`;
+
+const Github = styled.a`
+  color: black;
+  margin-top: auto;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid grey;
+  border-radius: 5px;
+
+  img {
+    width: 20px;
+    margin-right: 5px;
   }
 `;

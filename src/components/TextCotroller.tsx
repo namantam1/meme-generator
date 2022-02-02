@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { throttle } from "../utils";
 
 type Props = {
   title?: string;
@@ -46,7 +45,7 @@ export default function TextCotroller({
           <Label>Color :</Label>
           <Input
             value={fill}
-            onChange={throttle(e => setFill?.(e.target.value), 1000)}
+            onChange={e => setFill?.(e.target.value)}
             type="color"
           />
         </InputContainer>
