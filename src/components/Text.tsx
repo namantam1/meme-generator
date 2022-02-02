@@ -21,11 +21,9 @@ export default function Text({
   x?: string;
   parentRef: any;
 }) {
-  // const textRef = useRef();
   const [position, setPosition] = useState({ x, y });
 
   const handleMouseDown = () => {
-    // console.log(textRef.current.getBoundingClientRect(), e.pageX);
     document.addEventListener("mousemove", handleMouseMove);
   };
 
@@ -46,20 +44,6 @@ export default function Text({
   const handleMouseUp = () => {
     document.removeEventListener("mousemove", handleMouseMove);
   };
-
-  // useEffect(() => {
-  //   const escapeHandle = e => {
-  //     if (e.key === "Escape") {
-  //       document.removeEventListener("mousemove", handleMouseMove);
-  //     }
-  //   };
-
-  //   document.addEventListener("keydown", escapeHandle);
-
-  //   return () => {
-  //     document.removeEventListener("keydown", escapeHandle);
-  //   };
-  // }, [handleMouseMove]);
 
   return (
     <text

@@ -26,7 +26,6 @@ export default function Images({ images, onImageSelect }: Props) {
 }
 
 const Wrapper = styled.div`
-  /* height: 100%; */
   overflow: auto;
 `;
 

@@ -49,14 +49,6 @@ export default function TextCotroller({
             type="color"
           />
         </InputContainer>
-        {/* <InputContainer>
-          <Label>Stroke color :</Label>
-          <Input
-            value={stroke}
-            onChange={e => setStroke?.(e.target.value)}
-            type="color"
-          />
-        </InputContainer> */}
       </Wrapper>
     </Container>
   );

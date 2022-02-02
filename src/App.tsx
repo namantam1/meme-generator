@@ -69,8 +69,6 @@ function App() {
     setTexts({ ...texts, [id]: { ...texts[id], fill } });
   const handleSize = (id: 1 | 2) => (size: string) =>
     setTexts({ ...texts, [id]: { ...texts[id], size } });
-  // const handleColor = (id: 1 | 2) => (color: string) =>
-  //   setTexts({ ...texts, [id]: { ...texts[id], color } });
 
   const disabled = !imageSrc;
   return (
@@ -195,7 +193,6 @@ const EditorContainer = styled.div`
   height: 100%;
 `;
 
-/* font-size: ${({ size }) => size || "18px"}; */
 type ButtonProps = { textColor?: string; size?: number | string };
 const Button = styled.button`
   margin-top: 5px;
