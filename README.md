@@ -15,8 +15,9 @@ Live demo [here](https://meme.namantam1.tech).
 
 # Library and API used
 
-- [react-lazy-load-image-component](https://github.com/Aljullu/react-lazy-load-image-component#readme) : To lazy load images in slider
+- [API sauce](https://github.com/infinitered/apisauce#readme): An HTTP client library
 - [Styles Component](https://styled-components.com/)
+- [react-lazy-load-image-component](https://github.com/Aljullu/react-lazy-load-image-component#readme) : To lazy load images in slider
 - [Image flip meme API](https://imgflip.com/api): For fetching raw meme images
 - [Tempfiler API](https://github.com/namantam1/tempfiler): To upload generated meme to get share link
 
